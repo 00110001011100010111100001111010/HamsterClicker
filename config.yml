@@ -1,0 +1,52 @@
+# Main configuration file for the auto-clicker and requests to the Hamster Kombat account.
+
+hamster:
+    # Settings related to the Hamster Kombat account.
+    token: ...
+    # The unique token for your Hamster Kombat account. This token is used for authentication
+    # and to interact with the Hamster Kombat service. Ensure this token is kept secure.
+
+requests:
+    # Settings for making HTTP requests to the Hamster Kombat service.
+    proxies: []
+    # List of proxy servers to use for making requests. Format: TYPE:host:port:username:password
+    # For example: http://proxy.example.com:8080:user:pass
+    # Proxies can be used to bypass restrictions or to provide anonymity. If you're not using proxies,
+    # you can leave this field empty as shown here.
+
+    headers:
+        # HTTP headers to include with each request.
+        accept: application/json
+        # Indicates that the client expects a JSON response from the server.
+        accept-language: "ru,en-US;q=0.9,en;q=0.8"
+        # Specifies the languages that the client can accept. Here, Russian and English are supported.
+        origin: https://hamsterkombatgame.io
+        # The origin of the request. This helps the server understand the source of the request.
+        referer: https://web.telegram.org/
+        # The referring URL from which the request originated. This can help with security checks.
+        User-Agent: "Mozilla/5.0 (Linux; Android 13; SM-S901B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36"
+        # Information about the browser and operating system making the request. This can affect
+        # how the server responds, as some servers might tailor responses based on the User-Agent.
+        sec-ch-ua-platform: "\"Android\""
+        # Indicates the platform on which the browser is running. In this case, it specifies Android.
+
+clicker:
+    # Settings for the auto-clicker.
+    wait:
+        # The delay between clicks in seconds. A random value will be chosen from the provided range.
+        - 10
+        # Minimum delay in seconds between clicks.
+        - 6
+        # Maximum delay in seconds between clicks.
+        - 8
+        # An additional value that might be used to influence the range of delays. The actual delay
+        # will be randomly selected between the minimum and maximum values.
+
+    taps:
+        # Percentage of available clicks that will be executed. This is a list where each element
+        # represents a percentage of clicks relative to the total possible clicks.
+        - 90
+        # This percentage indicates how often clicks should occur, in this case, 90% of the available clicks.
+        - 20
+        # Additional percentage settings for clicks. Values range from 0 to 100, specifying how much
+        # of the total possible clicks will be executed based on this configuration.
